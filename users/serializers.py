@@ -14,7 +14,6 @@ class CustomJWTSerializer(TokenObtainPairSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
-        max_lenght=127,
         validators=[
             UniqueValidator(
                 queryset=User.objects.all(), message="email already registered."
